@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "author": "Uri Shaked",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-pi-pico", "id": "pico", "top": 16.05, "left": -63.6, "attrs": {} },
+    {
+      "type": "wokwi-a4988",
+      "id": "drv1",
+      "top": 225.8,
+      "left": 91.6,
+      "rotate": 270,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-stepper-motor",
+      "id": "stepper1",
+      "top": -24.29,
+      "left": 164.08,
+      "attrs": { "display": "angle" }
+    }
+  ],
+  "connections": [
+    [ "drv1:1B", "stepper1:B-", "black", [ "v0" ] ],
+    [ "drv1:1A", "stepper1:B+", "green", [ "v0" ] ],
+    [ "stepper1:A+", "drv1:2A", "blue", [ "v0" ] ],
+    [ "stepper1:A-", "drv1:2B", "red", [ "v0" ] ],
+    [ "drv1:SLEEP", "drv1:RESET", "green", [ "v15.92", "h-9.9" ] ],
+    [ "drv1:STEP", "pico:GP3", "orange", [ "v130.8", "h-203.87", "v-163.2" ] ],
+    [ "drv1:DIR", "pico:GP2", "violet", [ "v140.4", "h-223.07", "v-182.4" ] ],
+    [ "drv1:GND.2", "pico:GND.8", "black", [ "v0" ] ],
+    [ "pico:VBUS", "drv1:VDD", "red", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}

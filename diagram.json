@@ -3,7 +3,7 @@
   "author": "Uri Shaked",
   "editor": "wokwi",
   "parts": [
-    { "type": "wokwi-pi-pico", "id": "pico", "top": 16.05, "left": -63.6, "attrs": {} },
+    { "type": "board-pi-pico-w", "id": "pico", "top": 16.05, "left": -63.6, "attrs": {} },
     {
       "type": "wokwi-a4988",
       "id": "drv1",

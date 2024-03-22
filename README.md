@@ -18,21 +18,19 @@ This code (and diagram.json) is intended to be used with [wokwi](https://wokwi.c
 
 ## Step 2: Building a gate
 
-1. Modify the code to simulate closing a gate on start. Change the scrip to start by moving to a position of -90 degrees.
-
-2. Then you will need to create a function to simulate making the motor open and closs the gate. Your function should make the motor:
-  2b. Move back to a position of 0 degrees.
-  2c. Wait 30 seconds, then move the motor position back to -90 degrees.
-  2d. Optionally, you could simulate warning lights by adding an LED that will blink while the gate is moving.
-  2e. Optionally, you could simulate a safety mechanism by adding a distance sensor to stop the gate moving if an object is below the gate.
+1. Create a function to simulate making the motor close and open the gate. Your function should make the motor:
+   1. Move the motor position to -90 degrees.
+   2. Wait 60 seconds, then move back to a position of 0 degrees.
+   3. Optionally, you could simulate warning lights by adding an LED that will blink while the gate is moving.
+   4. Optionally, you could simulate a safety mechanism by adding a distance sensor to stop the gate moving if an object is below the gate.
 
 ## Task 3: Adding a button
 
 1. Add a button to the system:
-  1a. Click **+** and add a **pushbutton**.
-  1b. Connect the push button (**btn 1:1:l** to**3V** and  **btn 1:2:r** to **Pico GP:26**)
+   1. Click **+** and add a **pushbutton**.
+   2. Connect the push button (**btn 1:1:l** to**3V** and  **btn 1:2:r** to **Pico GP:26**)
 
-3. Modify the code to call your function when the button is pressed (you may find some ideas in **hint.py**).
+2. Modify the code to call your function when the button is pressed (you may find some ideas in **hint.py**).
 
 ## Task 4: Network capable
 

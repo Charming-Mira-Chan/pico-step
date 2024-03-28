@@ -15,9 +15,10 @@
     {
       "type": "wokwi-stepper-motor",
       "id": "stepper1",
-      "top": -24.29,
-      "left": 164.08,
-      "attrs": { "display": "angle" }
+      
+      "top": -120.29,
+      "left": 212.08,
+      "attrs": { "display": "angle","arrow": "orange" }
     }
   ],
   "connections": [

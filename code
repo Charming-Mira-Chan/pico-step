@@ -1,0 +1,39 @@
+from machine import Pin
+import utime
+utime.sleep(0.1) # Wait for USB to become ready
+
+light = Pin(5, Pin.OUT)
+button = Pin(9, Pin.IN,Pin.PULL_DOWN)
+
+# Define pins
+pins = [
+  Pin(2, Pin.OUT),
+  Pin(3, Pin.OUT),
+]
+
+# Create a sequence
+clockwise = [
+  [0,0],
+  [1,1],
+]
+anticlockwise = [
+  [1,0],
+  [0,1],
+]
+
+# Use loops to set pins in sequence
+def turn(step_sequence):
+  for x in range(50):
+    for step in step_sequence:
+      for i in range(len(pins)):
+        pins[i].value(step[i])
+        light.toggle()
+        utime.sleep(0.15)
+
+
+turn(clockwise)
+utime.sleep(20)
+turn(anticlockwise)
+
+if button.value() == 1:
+  print("hi")
